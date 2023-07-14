@@ -11,6 +11,7 @@ enum class PipActionsLayout(
     NONE(mutableListOf()),
     MEDIA(mutableListOf(PipAction.PREVIOUS, PipAction.PAUSE, PipAction.NEXT)),
     MEDIA_ONLY_PAUSE(mutableListOf(PipAction.PAUSE)),
+    MEDIA_PAUSE_NEXT(mutableListOf(PipAction.PAUSE, PipAction.NEXT)),
     MEDIA_LIVE(mutableListOf(PipAction.LIVE, PipAction.PAUSE));
 
     @RequiresApi(Build.VERSION_CODES.O)
