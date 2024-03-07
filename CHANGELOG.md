@@ -1,3 +1,7 @@
+## 0.8.1
+
+* fix security issue on Android 14
+
 ## 0.8.0
 
 * Pip Actions implemented by [Erick Daros](https://github.com/erickdaros): [Issue #5](https://github.com/PuntitOwO/simple_pip_mode_flutter/issues/5).
