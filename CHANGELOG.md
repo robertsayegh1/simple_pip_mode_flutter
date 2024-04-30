@@ -1,3 +1,11 @@
+## 0.8.3
+
+* fix build issue
+
+## 0.8.2
+
+* fix crash while onDetachedFromEngine on Android which version below 8
+
 ## 0.8.1
 
 * fix security issue on Android 14
