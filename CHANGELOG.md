@@ -1,3 +1,7 @@
+## 0.8.4
+
+* fix potential crash
+
 ## 0.8.3
 
 * fix build issue

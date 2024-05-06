@@ -8,7 +8,7 @@ import io.flutter.embedding.engine.FlutterEngine
 
 open class PipCallbackHelper {
   private val CHANNEL = "puntito.simple_pip_mode"
-  private lateinit var channel: MethodChannel
+  private var channel: MethodChannel? = null
 
   fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
     channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL)
@@ -20,13 +20,13 @@ open class PipCallbackHelper {
 
   fun onPictureInPictureModeChanged(active: Boolean) {
     if (active) {
-      channel.invokeMethod("onPipEntered", null)
+      channel?.invokeMethod("onPipEntered", null)
     } else {
-      channel.invokeMethod("onPipExited", null)
+      channel?.invokeMethod("onPipExited", null)
     }
   }
 
   fun onPipAction(action: PipAction) {
-    channel.invokeMethod("onPipAction", action.name.lowercase())
+    channel?.invokeMethod("onPipAction", action.name.lowercase())
   }
 }
