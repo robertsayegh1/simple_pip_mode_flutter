@@ -18,6 +18,7 @@ import 'package:simple_pip_mode/simple_pip.dart';
 ///
 /// See also:
 /// * [SimplePip], to handle callbacks.
+///
 class PipWidget extends StatefulWidget {
   final VoidCallback? onPipEntered;
   final VoidCallback? onPipExited;
@@ -27,17 +28,17 @@ class PipWidget extends StatefulWidget {
   final Widget Function(BuildContext)? pipBuilder;
   final Widget? pipChild;
   final PipActionsLayout pipLayout;
-  const PipWidget({
-    Key? key,
-    this.onPipEntered,
-    this.onPipExited,
-    this.onPipAction,
-    this.builder,
-    this.child,
-    this.pipBuilder,
-    this.pipChild,
-    this.pipLayout = PipActionsLayout.none
-  })  : assert(child != null || builder != null),
+  const PipWidget(
+      {Key? key,
+      this.onPipEntered,
+      this.onPipExited,
+      this.onPipAction,
+      this.builder,
+      this.child,
+      this.pipBuilder,
+      this.pipChild,
+      this.pipLayout = PipActionsLayout.none})
+      : assert(child != null || builder != null),
         assert(pipChild != null || pipBuilder != null),
         super(key: key);
 
@@ -56,10 +57,9 @@ class PipWidgetState extends State<PipWidget> {
   void initState() {
     super.initState();
     pip = SimplePip(
-      onPipEntered: onPipEntered,
-      onPipExited: onPipExited,
-      onPipAction: onPipAction
-    );
+        onPipEntered: onPipEntered,
+        onPipExited: onPipExited,
+        onPipAction: onPipAction);
     pip.setPipActionsLayout(widget.pipLayout);
   }
 
@@ -79,7 +79,7 @@ class PipWidgetState extends State<PipWidget> {
     widget.onPipExited?.call();
   }
 
-  /// The user taps one PIP action 
+  /// The user taps one PIP action
   void onPipAction(PipAction action) {
     widget.onPipAction?.call(action);
   }
